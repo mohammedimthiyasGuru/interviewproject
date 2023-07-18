@@ -23,6 +23,26 @@ app.post('/fetch_contact',(req,res) => {
 });
 
 
+
+app.put('/getcontact/:id', function(req,res){
+    console.log(req.params.id);
+    const phonenumber = req.params.id;
+    if(phonenumber == '9876543210'){
+     res.json({
+         message : "Updated",
+         code: 200,
+     });
+    }else {
+     res.json({
+         message : "Not Found",
+         code: 404,
+     });
+    }
+ });
+
+ 
+ 
+
 app.get('/getcontact', function(req,res){
 res.json({
     message : "Message",
